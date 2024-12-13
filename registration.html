@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="regisstyle.css">
+    <script>
+    //validations for registration form
+    function formValidation() {
+    var uname = document.registration.name;
+    var uadd = document.registration.address;
+    var uphone = document.registration.phone;
+    var uemail = document.registration.email;
+    var pwdone = document.registration.pwdone;
+    var pwdtwo = document.registration.pwdtwo;
+
+    if (Emptyfield(uname, uadd, uphone, uemail, pwdone, pwdtwo)) {
+        if (allLetter(uname)) {
+            if (alphanumeric(uadd)) {
+                if (allnumeric(uphone)) {
+                    if (ValidateEmail(uemail)) {
+                        if (valipassword(pwdone, pwdtwo)) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return false;
+}
+
+// Empty field validations
+function Emptyfield(uname, uadd, uphone, uemail, pwdone, pwdtwo) {
+    if (uname.value.length == 0 || uadd.value.length == 0 || uphone.value.length == 0 || uemail.value.length == 0 || pwdone.value.length == 0 || pwdtwo.value.length == 0) {
+        alert("Fields should not be empty");
+        return false;
+    }
+    return true;
+}
+
+// Validations for name
+function allLetter(uname) {
+    var letters = /^[A-Za-z]+( [A-Za-z]+)*$/;
+    if (uname.value.match(letters)) {
+        return true;
+    } else {
+        alert('Name must have alphabet characters only');
+        uname.focus();
+        return false;
+    }
+}
+
+// Validations for address
+function alphanumeric(uadd) {
+    var letters = /^[0-9a-zA-Z-\s]+$/;
+    if (uadd.value.match(letters)) {
+        return true;
+    } else {
+        alert('User address must have alphanumeric characters only');
+        uadd.focus();
+        return false;
+    }
+}
+
+// Validations for phone number
+function allnumeric(uphone) {
+    var numbers = /^[0]{1}[7]{1}[01245678]{1}[0-9]{7}$/; 
+    if (uphone.value.match(numbers)) {
+        return true;
+    } else {
+        alert('Phone Number must have numeric characters only');
+        uphone.focus();
+        return false;
+    }
+}
+
+// Validations for email
+function ValidateEmail(uemail) {
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (uemail.value.match(mailformat)) {
+        return true;
+    } else {
+        alert("You have entered an invalid email address!");
+        uemail.focus();
+        return false;
+    }
+}
+
+// Validations for password
+function valipassword(pwdone, pwdtwo) {
+    if (pwdone.value === pwdtwo.value) {
+        return true;
+    } else {
+        alert("Password & Confirm Password must be the same");
+        pwdtwo.focus();
+        return false;
+    }
+}
+    </script>
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="zooparc.png" alt="ZooParc Logo">
+            <h1>ZooParc</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+                <li><a href="animals.html">Animals</a></li>
+                <li><a href="event&prog.php">Events</a></li>
+                <li><a href="outlets.html">Food Outlets</a></li>
+            </ul>
+        </nav>
+        <div>
+           <a class="enquire-button" href="memberwelcome.php">Community LogIn</a>
+        </div>
+    </header>
+<main>
+    <section class="hero">
+      <h3 style="font-family: 'Montserrat', sans-serif;text-align: center;margin-top: 10px;color: black;">Sign Up here & Become a Community member at ZooParc</h3>
+        <form action="insertData.php" method="post" name="registration"  class="center-form" onsubmit="return formValidation();">
+          
+          <table>
+            <tr>
+              <td><label for="name">Name:</label></td>
+              <td><input type="text" id="name" name="name"></td>
+            </tr>
+            <tr>
+            <td><label for="address">Profile Picture:</label></td>
+            <td><input type="file" id="file" name="file" accept="image/*"></td>
+            </tr>
+            <tr>
+              <td><label for="phone number">Tel Number:</label></td>
+              <td><input type="tel" name="phone" id="phone"></td>
+            </tr>
+            <tr>
+              <td><label for="address">Address:</label></td>
+              <td><input type="text" name="address" id="address"></td>
+            </tr>
+            <tr>
+              <td><label for="dob">Date of Birth:</label></td>
+              <td><input type="date" name="dob" id="dob"></td>
+            </tr>
+            <tr>
+              <td><label for="gender">Gender:</label></td>
+              <td>
+                <input type="radio" name="gender" value="male"> Male  
+                <input type="radio" name="gender" value="female"> Female  <br>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="status">Have experiences as Volunteer?:</label></td>
+              <td>
+                <input type="radio" name="exp" value="yes"> Yes  
+                <input type="radio" name="exp" value="no"> No  <br>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="email">Email:</label></td>
+              <td><input type="email" id="email" name="email"></td>
+            </tr>
+            <tr>
+              <td><label for="password">Password:</label></td>
+              <td>
+                <input type="password" name="pwdone" id="password">
+              </td>
+            </tr>
+            <tr>
+              <td><label for="password">Confirm Password:</label></td>
+              <td>
+                <input type="password" name="pwdtwo" id="conpassword">
+              </td>
+            </tr>
+            <tr>
+              <td><label for="additional_details">Additional:</label></td>
+              <td>
+                <textarea name="additional_details" id="add" cols="26" rows="10"></textarea>
+              </td>
+            </tr>
+          </table>
+          <input type="submit" name="submit" id="submit" value="Submit" class="enquire-button">
+          <button type="reset" class="enquire-button">Reset</button> 
+          
+        </form>
+    </section>
+    <section class="hero">
+      <h4>Who are the Volunteers?</h4>
+      <p>Volunteers are individuals who willingly offer their time, skills, and energy 
+        to support various causes and organizations without expecting financial compensation.
+         Their contributions are invaluable across numerous fields,
+         including social services, education, healthcare, environmental conservation, and community development.</p>
+    </section>
+    <section class="hero">
+      <h3>Volunteers at ZooParc</h3>
+        
+        
+       <p class="vol"> <img src="volunteer.png" width="50%" height="50%" class="ico">  </p> 
+<p class="ali">At Zooparc, the heart and soul of our vibrant community are our hundreds of dedicated volunteers.
+   These passionate individuals come from all walks of life, united by their love for animals and commitment to conservation.
+  Whether it's feeding and caring for the diverse wildlife, assisting in educational programs, or participating in habitat restoration projects, 
+  our volunteers play a crucial role in the daily operations and long-term success of the zoo. Their tireless efforts and unwavering 
+  dedication help ensure that Zooparc remains a haven for both animals and visitors alike, fostering a deeper connection between people
+   and the natural world.</p>
+    </section>
+</main>
+<br><br>
+<footer>
+  <div class="footer-container">
+    <img src="zooparc.png" alt="">
+    <div class="footer-links">
+      <a href="">Contact Us</a>
+      <a href="">T & C's</a>
+      <a href="">Privacy Policy</a>
+    </div>
+    <p>Get-in Touch With ZooParc!</p>
+    <br>
+    <div class="footer-social">
+      <img src="sociallogo.png" alt="">
+    </div>
+    <div class="footer-social">
+      <a href="#">Twitter</a>
+      <a href="#"> Facebook</a>
+      <a href="#">Instagram</a>
+    </div>
+</div>
+</footer>
+
+</body>
+</html>

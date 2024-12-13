@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-image: url(registerbg.png);
+      background-size: 100% 100%;
+      height: 100vh;
+      background-attachment: fixed;
+}
+h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    color: white;
+}
+h3{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    color: black;
+    text-align: center;
+}
+h4{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    color: black;    
+}
+p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    color: black;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(200, 225, 192);
+    padding: 10px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.logo h1 {
+    margin-left: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #010101;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fbff00;
+}
+.enquire-button {
+    background-color: #f6f6f6;
+    color: #050505;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.enquire-button:hover {
+    background-color: #fbff00;
+    transform: scale(1.05);
+}
+
+nav ul li a, .enquire-button {
+    position: relative;
+}
+nav ul li a::after, .enquire-button::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fbff00;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::after, .enquire-button:hover::after {
+    transform: scaleX(1);
+}
+
+.center-form {
+    margin: 0 auto;
+    width: 400px; 
+    padding: 20px;
+    border: 1px solid #cff803;
+    border-radius: 5px;
+    background-color: rgba(107, 103, 103, 0.599);
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 20px;
+  }
+  table {
+    width: 100%; 
+  }
+  td {
+    padding: 5px;
+    text-align: left;  
+  }
+  input[type="text"], input[type="email"],input[type="tel"],input[type="password"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+.vol{
+    text-align: center;
+}
+.ali{
+    text-align: center;
+}
+.ico{
+    border-radius: 10%;
+}
+.footer-container {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+.footer-container p {
+    font-size: 15px;
+    color: #fff;
+}
+  
+.footer-links {
+    margin-bottom: 20px;
+}
+  
+.footer-links a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 14px;
+}
+  
+.footer-links a:hover {
+    text-decoration: underline;
+}
+  
+.footer-social a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 14px;
+}
+.footer-social a:hover {
+    color: #ccc;
+}
