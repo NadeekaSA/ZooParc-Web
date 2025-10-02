@@ -1,69 +1,82 @@
-# Project Title
+# ZooParc Website
 
-A brief description of what this project does and who it's for.
+This project is a website for ZooParc, a fictional zoological park. It provides information about the park, its animals, events, and allows users to register as volunteers and members. It also includes an admin panel for managing educational content.
 
-## Installation
+## Key Features
+
+*   **User-facing Website:**
+    *   **Home:** Welcome page with an overview of the park.
+    *   **About Us:** Information about ZooParc's mission and team.
+    *   **Animals:** A gallery of animals at the park.
+    *   **Events & Programs:** Information on upcoming events.
+    *   **Food Outlets:** Details about dining options.
+    *   **Volunteer Registration:** A form for users to register as volunteers.
+    *   **Member Community:** A login portal for registered members to access exclusive content.
+*   **Admin Panel:**
+    *   An interface for administrators to upload and manage educational content and events.
+*   **Database Integration:**
+    *   Uses MySQL to store user data, event information, and other content.
+
+## Technologies Used
+
+*   **Frontend:**
+    *   HTML5
+    *   CSS3
+    *   JavaScript
+*   **Backend:**
+    *   PHP
+*   **Database:**
+    *   MySQL
+
+## Getting Started
+
+To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
 
-*   List any prerequisites here (e.g., Python 3.8+, Node.js 14+).
+You will need a local web server environment that supports PHP and MySQL. We recommend using a package like XAMPP, WAMP, or MAMP.
 
-### From Package Manager
+*   [XAMPP](https://www.apachefriends.org/index.html) (cross-platform)
+*   [WAMP](https://www.wampserver.com/en/) (for Windows)
+*   [MAMP](https://www.mamp.info/en/mamp/) (for macOS)
 
-```bash
-# Placeholder for package manager installation (e.g., pip, npm)
-npm install your-project-name
-```
+### Installation
 
-### From Source
-
-1.  Clone the repository:
+1.  **Clone the repository:**
     ```bash
     git clone https://github.com/your-username/your-project-name.git
-    cd your-project-name
     ```
-2.  Install dependencies:
-    ```bash
-    # Placeholder for dependency installation (e.g., pip, npm)
-    npm install
-    ```
-3.  Build the project (if necessary):
-    ```bash
-    # Placeholder for build commands
-    npm run build
-    ```
+2.  **Move the project to your web server's root directory:**
+    *   For XAMPP, this is typically the `htdocs` folder (e.g., `C:/xampp/htdocs`).
+3.  **Set up the database:**
+    *   Open phpMyAdmin (usually accessible at `http://localhost/phpmyadmin`).
+    *   Create a new database named `zooparcdb`.
+    *   You can import the table structure if you have a `.sql` file, or manually create the tables as needed by the PHP scripts. The `connection.php` file uses the username `root` with no password.
+4.  **Run the project:**
+    *   Start your Apache and MySQL services from your XAMPP/WAMP/MAMP control panel.
+    *   Open your web browser and navigate to `http://localhost/your-project-directory-name/home.html`.
 
-## Usage
+## File Structure
 
-### Running the Project
+Here is an overview of the key files in the project:
 
-```bash
-# Placeholder for commands to run the project
-your-project-command --option value
 ```
-
-### Examples
-
-Provide a few examples of how to use the project's main features.
-
-**Example 1: Basic Usage**
-
-```python
-# Placeholder for a code example
-from your_project import main_function
-
-result = main_function(input_data)
-print(result)
-```
-
-**Example 2: Advanced Feature**
-
-```python
-# Placeholder for another code example
-from your_project import advanced_feature
-
-output = advanced_feature(config_options)
-# Do something with the output
+├── home.html               # The main landing page
+├── aboutUs.html            # About Us page
+├── animals.html            # Animals gallery page
+├── event&prog.php          # Events and Programs page
+├── outlets.html            # Food outlets page
+├── registration.html       # Volunteer/Member registration form
+├── memberwelcome.php       # Login page for members
+├── admin.php               # Admin panel for content management
+├── homestyle.css           # Styles for the home page
+├── connection.php          # Database connection script
+├── insertData.php          # Handles user registration data
+├── loginconnection.php     # Handles member login
+├── eduUploads.php          # Handles uploads from the admin panel
+├── delete.php              # Deletes records (likely admin functionality)
+├── zooparc.png             # Site logo
+└── README.md               # This file
 ```
 
 ## Contributing
@@ -94,4 +107,4 @@ Please make sure your code adheres to the project's coding standards and include
 
 ## License
 
-This project is licensed under the [Your License Name] - see the [LICENSE.md](LICENSE.md) file for details.
+This project is not currently licensed.
